@@ -33,13 +33,17 @@ Este projeto é uma aplicação Node.js desenvolvida durante a masterclass da Ro
    ```
 4. Configure o arquivo `.env` conforme exemplo:
    ```env
-   DATABASE_URL=postgresql://postgres:postgres@localhost:5432/desafio
+   DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<database>
    ```
 5. Execute as migrações:
    ```bash
    pnpm db:migrate
    ```
-6. Inicie o servidor de desenvolvimento:
+6. Popule o banco de dados:
+   ```bash
+   pnpm db:seed
+   ```
+7. Inicie o servidor de desenvolvimento:
    ```bash
    pnpm dev
    ```
@@ -50,7 +54,10 @@ pnpm dev         # Inicia o servidor em modo desenvolvimento
 pnpm docker:up   # Sobe o banco de dados com Docker Compose
 pnpm db:generate # Gera os arquivos de migração do Drizzle
 pnpm db:migrate  # Executa as migrações do banco de dados
+pnpm db:seed     # Popula o banco com dados fake
 pnpm db:studio   # Abre o Drizzle Studio para visualizar o banco
+pnpm test        # Executa os testes automatizados
+pnpm test:coverage # Executa o coverage dos testes automatizados
 ```
 
 ## Documentação

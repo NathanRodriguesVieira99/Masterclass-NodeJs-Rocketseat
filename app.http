@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:3333
+
+# @name get_courses
+GET {{baseUrl}}/courses
+
+###
+
+# @name get_course_by_id
+GET {{baseUrl}}/courses/9ffcf7e4-10e5-4a29-8d63-1299c1c07da2
+
+###
+
+# @name create_course
+POST {{baseUrl}}/courses
+Content-Type: application/json
+
+{
+  "title": "Curso de "
+}

@@ -1,21 +1,26 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 22",
-  "_version": "22.0.0",
-  "compilerOptions": {
-    "lib": [
-      "es2024",
-      "ESNext.Array",
-      "ESNext.Collection",
-      "ESNext.Iterator"
-    ],
-    "module": "nodenext",
-    "target": "es2022",
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node16",
-    "strictNullChecks": true
-  }
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Node 22",
+	"_version": "22.0.0",
+	"compilerOptions": {
+		"lib": [
+			"es2024",
+			"ESNext.Array",
+			"ESNext.Collection",
+			"ESNext.Iterator"
+		],
+		"module": "nodenext",
+		"target": "es2022",
+		"strict": true,
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"types": ["vitest/globals"],
+		"noEmit": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"moduleResolution": "node16",
+		"strictNullChecks": true
+	}
 }

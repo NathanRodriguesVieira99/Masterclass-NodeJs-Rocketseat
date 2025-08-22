@@ -29,7 +29,7 @@ Este projeto é uma aplicação Node.js desenvolvida durante a masterclass da Ro
    ```
 3. Inicie o banco de dados com Docker:
    ```bash
-  pnpm docker:up
+    pnpm docker:up
    ```
 4. Configure o arquivo `.env` conforme exemplo:
    ```env

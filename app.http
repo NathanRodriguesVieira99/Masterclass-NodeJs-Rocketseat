@@ -4,6 +4,19 @@
 GET {{baseUrl}}/courses
 
 ###
+# @name get_courses_with_search_filter
+GET {{baseUrl}}/courses?search=react
+
+###
+
+# @name get_courses_with_orderBy_filter
+GET {{baseUrl}}/courses?orderBy=title
+
+###
+# @name get_courses_with_page_filter
+GET {{baseUrl}}/courses?page=3
+
+### 
 
 # @name get_course_by_id
 GET {{baseUrl}}/courses/9ffcf7e4-10e5-4a29-8d63-1299c1c07da2
@@ -15,5 +28,5 @@ POST {{baseUrl}}/courses
 Content-Type: application/json
 
 {
-  "title": "Curso de "
+  "title": "Curso de NuxtJs"
 }

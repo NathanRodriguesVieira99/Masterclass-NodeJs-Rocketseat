@@ -5,11 +5,11 @@ import {
   type ZodTypeProvider,
   jsonSchemaTransform,
 } from "fastify-type-provider-zod";
-import { fastifySwagger } from '@fastify/swagger';
+import { fastifySwagger } from "@fastify/swagger";
 import { createCoursesRoute } from "./src/routes/create-course";
 import { getCoursesByIdRoute } from "./src/routes/get-course-by-id";
 import { getCoursesRoute } from "./src/routes/get-courses";
-import scalarAPIReference from '@scalar/fastify-api-reference'
+import scalarAPIReference from "@scalar/fastify-api-reference";
 
 /**
  * FASTIFY
@@ -32,26 +32,28 @@ server.setValidatorCompiler(validatorCompiler);
 /**
  *  SWAGGER
  */
-server.register(fastifySwagger,{
-  openapi: {
-    info:{
-      title: 'Desafio NodeJs',
-      version: '1.0.0'
-    }
-  },
-  transform: jsonSchemaTransform
-})
+if (process.env.NODE_ENV === "development") {
+  server.register(fastifySwagger, {
+    openapi: {
+      info: {
+        title: "Desafio NodeJs",
+        version: "1.0.0",
+      },
+    },
+    transform: jsonSchemaTransform,
+  });
 
-server.register(scalarAPIReference,{
-routePrefix: '/docs',
-configuration:{
-  theme: 'kepler'
+  server.register(scalarAPIReference, {
+    routePrefix: "/docs",
+    configuration: {
+      theme: "kepler",
+    },
+  });
 }
-})
 
 /**
  * Rotas
  */
-server.register(createCoursesRoute)
-server.register(getCoursesByIdRoute)
-server.register(getCoursesRoute)
+server.register(createCoursesRoute);
+server.register(getCoursesByIdRoute);
+server.register(getCoursesRoute);

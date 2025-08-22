@@ -8,6 +8,7 @@
     "module": "nodenext",
     "target": "es2022",
     "strict": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node16"

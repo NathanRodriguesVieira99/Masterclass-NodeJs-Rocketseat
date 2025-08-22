@@ -1,20 +1,48 @@
 {
-  "version": "7",
-  "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1755292421102,
-      "tag": "0000_loose_lifeguard",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1755822977795,
-      "tag": "0001_sleepy_carlie_cooper",
-      "breakpoints": true
-    }
-  ]
+	"version": "7",
+	"dialect": "postgresql",
+	"entries": [
+		{
+			"idx": 0,
+			"version": "7",
+			"when": 1755292421102,
+			"tag": "0000_loose_lifeguard",
+			"breakpoints": true
+		},
+		{
+			"idx": 1,
+			"version": "7",
+			"when": 1755822977795,
+			"tag": "0001_sleepy_carlie_cooper",
+			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "7",
+			"when": 1755887495102,
+			"tag": "0002_messy_lester",
+			"breakpoints": true
+		},
+		{
+			"idx": 3,
+			"version": "7",
+			"when": 1755887626950,
+			"tag": "0003_regular_wither",
+			"breakpoints": true
+		},
+		{
+			"idx": 4,
+			"version": "7",
+			"when": 1755889209326,
+			"tag": "0004_stormy_post",
+			"breakpoints": true
+		},
+		{
+			"idx": 5,
+			"version": "7",
+			"when": 1755889617158,
+			"tag": "0005_tiresome_havok",
+			"breakpoints": true
+		}
+	]
 }

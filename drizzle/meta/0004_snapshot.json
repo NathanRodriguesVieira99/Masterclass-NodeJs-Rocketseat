@@ -1,6 +1,6 @@
 {
-	"id": "718fe3d9-040d-4f19-b0d5-357ac2218b12",
-	"prevId": "d4499840-0b21-40d6-a462-0bc80dddd5af",
+	"id": "4becaa30-f8e0-4467-a79d-a75c3d622ce2",
+	"prevId": "d93a5304-ae09-42fb-b21d-33a57d86706c",
 	"version": "7",
 	"dialect": "postgresql",
 	"tables": {
@@ -38,6 +38,64 @@
 					"columns": ["title"]
 				}
 			},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		},
+		"public.enrollments": {
+			"name": "enrollments",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true,
+					"default": "gen_random_uuid()"
+				},
+				"userId": {
+					"name": "userId",
+					"type": "uuid",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"courseId": {
+					"name": "courseId",
+					"type": "uuid",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"createdAt": {
+					"name": "createdAt",
+					"type": "timestamp with time zone",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {
+				"enrollments_userId_users_id_fk": {
+					"name": "enrollments_userId_users_id_fk",
+					"tableFrom": "enrollments",
+					"tableTo": "users",
+					"columnsFrom": ["userId"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				},
+				"enrollments_courseId_courses_id_fk": {
+					"name": "enrollments_courseId_courses_id_fk",
+					"tableFrom": "enrollments",
+					"tableTo": "courses",
+					"columnsFrom": ["courseId"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
 			"policies": {},
 			"checkConstraints": {},
 			"isRLSEnabled": false

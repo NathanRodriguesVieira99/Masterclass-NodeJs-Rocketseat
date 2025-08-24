@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker/locale/pt_BR';
+import { hashPassword } from '@/utils/hash';
 import { db } from './client';
 import { courses, enrollments, users } from './schema';
 
@@ -6,9 +7,24 @@ const seed = async () => {
 	const usersInsert = await db
 		.insert(users)
 		.values([
-			{ name: faker.person.fullName(), email: faker.internet.email() },
-			{ name: faker.person.fullName(), email: faker.internet.email() },
-			{ name: faker.person.fullName(), email: faker.internet.email() },
+			{
+				name: faker.person.fullName(),
+				email: faker.internet.email(),
+				password: await hashPassword('12345678'),
+				role: 'student',
+			},
+			{
+				name: faker.person.fullName(),
+				email: faker.internet.email(),
+				password: await hashPassword('12345678'),
+				role: 'student',
+			},
+			{
+				name: faker.person.fullName(),
+				email: faker.internet.email(),
+				password: await hashPassword('12345678'),
+				role: 'student',
+			},
 		])
 		.returning();
 

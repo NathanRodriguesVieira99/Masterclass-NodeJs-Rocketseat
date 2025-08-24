@@ -19,14 +19,27 @@ GET {{baseUrl}}/courses?page=3
 ### 
 
 # @name get_course_by_id
-GET {{baseUrl}}/courses/9ffcf7e4-10e5-4a29-8d63-1299c1c07da2
+GET {{baseUrl}}/courses/67970ee5-f838-4741-a328-6b5c39625806
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmM2OTRlOC1hNjhmLTRhNTMtYjhjNC0yMDgxZjMzODc1OGYiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1NjA0NDkzNn0.176a-l_8Ms-pWxOgMHq2VhQXavk6ouM80HHOLMu7_r0
 
 ###
 
 # @name create_course
 POST {{baseUrl}}/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmM2OTRlOC1hNjhmLTRhNTMtYjhjNC0yMDgxZjMzODc1OGYiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NjA0NjcyNn0.FfliMU6XvTigzT7iSRCP_CceaXjyFpsFYaqkwFuk-24
 
 {
-  "title": "Curso de NuxtJs"
+  "title": "Curso de Python"
+}
+
+###
+
+# @name login
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "Lucca4@yahoo.com",
+  "password": "12345678"
 }

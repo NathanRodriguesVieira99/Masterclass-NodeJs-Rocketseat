@@ -1,0 +1,8 @@
+node_modules
+.husky
+.git
+.env*
+coverage
+vitest.config.ts
+app.http
+README.md

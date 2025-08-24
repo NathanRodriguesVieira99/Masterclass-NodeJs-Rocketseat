@@ -2,11 +2,14 @@ import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod';
 import z from 'zod';
 import { db } from '@/database/client';
 import { courses } from '@/database/schema';
+import { checkRequestJWT } from './hooks/check-request-jwt';
+import { checkUserRole } from './hooks/check-user-role';
 
 export const createCoursesRoute: FastifyPluginAsyncZod = async (server) => {
 	server.post(
 		'/courses',
 		{
+			preHandler: [checkRequestJWT, checkUserRole('manager')],
 			schema: {
 				tags: ['Courses'],
 				summary: 'Create a course',

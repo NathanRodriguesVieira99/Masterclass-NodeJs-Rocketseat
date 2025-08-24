@@ -10,6 +10,7 @@ import {
 import { createCoursesRoute } from '@/routes/create-course';
 import { getCoursesByIdRoute } from '@/routes/get-course-by-id';
 import { getCoursesRoute } from '@/routes/get-courses';
+import { LoginRoute } from './routes/login';
 
 /**
  * FASTIFY
@@ -57,3 +58,4 @@ if (process.env.NODE_ENV === 'development') {
 server.register(createCoursesRoute);
 server.register(getCoursesByIdRoute);
 server.register(getCoursesRoute);
+server.register(LoginRoute);
